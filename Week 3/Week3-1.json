@@ -1,0 +1,18 @@
+[
+  {
+    "Name": "Pascal Made Simple",
+    "Price": 700
+  },
+  {
+    "Name": "Guide to Pascal",
+    "Price": 400
+  },
+  {
+    "Name": "Scala for the Impatient",
+    "Price": 1000
+  },
+  {
+    "Name": "Scala in Depth",
+    "Price": 1300
+  }
+]
