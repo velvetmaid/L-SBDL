@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Week 3-2</title>
   </head>
   <body>
-    <table>
+    <table id="tabelData">
       <tr>
         <td>Nama</td>
         <td>Price</td>
@@ -15,7 +15,54 @@
     </table>
 
     <script>
-        
+      //Fungsi untuk styling menggunakan -> css(namavariabel, {insert style here})
+      function css(e, styles) {
+        for (const property in styles) e.style[property] = styles[property];
+      }
+      
+      let tabelBuku = document.querySelector("#tabelData");
+      css(tabelBuku, {
+        background: "yellow",
+        border: "solid 1px red",
+      });
+      var barisData = document.createElement("tr");
+      var isiData = document.createElement("td");
+      isiData.innerText = "Sistem basis data lanjutan dengan JSON";
+      tabelBuku.setAttribute("align", "center"); //Bikin tabel ketengah
+      isiData.style.border = "solid 1px #057091"; //Border untuk baris data atau tr
+      barisData.appendChild(isiData);
+      isiData = document.createElement("td");
+      isiData.innerText = 250000;
+      isiData.style.border = "solid 1px #057091";
+      barisData.appendChild(isiData);
+      tabelBuku.appendChild(barisData);
+      //baris kedua
+      var barisData = document.createElement("tr");
+      var isiData = document.createElement("td");
+      isiData.innerText = "Sistem basis data";
+      barisData.appendChild(isiData);
+      isiData = document.createElement("td");
+      isiData.innerText = 150000;
+      barisData.appendChild(isiData);
+      tabelBuku.appendChild(barisData);
+      //
+      var barisData = document.createElement("tr");
+      var isiData = document.createElement("td");
+      isiData.innerText = "Sistem basis data";
+      barisData.appendChild(isiData);
+      isiData = document.createElement("td");
+      isiData.innerText = 150000;
+      barisData.appendChild(isiData);
+      tabelBuku.appendChild(barisData);
+      //
+      var barisData = document.createElement("tr");
+      var isiData = document.createElement("td");
+      isiData.innerText = "Sistem basis data";
+      barisData.appendChild(isiData);
+      isiData = document.createElement("td");
+      isiData.innerText = 150000;
+      barisData.appendChild(isiData);
+      tabelBuku.appendChild(barisData);
     </script>
   </body>
 </html>
