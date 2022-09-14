@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display Array JSON Object</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <table id="div1">
+      <tr>
+        <th>Id</th>
+        <th>Buah</th>
+        <th>Category</th>
+        <th>Warna</th>
+      </tr>
+    </table>
+
+    <style>
+      table {
+        margin: 0 auto;
+        font-size: large;
+        border: 1px solid black;
+      }
+    </style>
+
+    <script>
+      var obj = [
+        {
+          id: "001",
+          name: "apple",
+          category: "fruit",
+          color: "red",
+        },
+        {
+          id: "002",
+          name: "melon",
+          category: "fruit",
+          color: "green",
+        },
+        {
+          id: "003",
+          name: "banana",
+          category: "fruit",
+          color: "yellow",
+        },
+        {
+          id: "004",
+          name: "grape",
+          category: "fruit",
+          color: "purple",
+        },
+      ];
+      var tbl = $("<table/>").attr("id", "mytable");
+      $("#div1").append(tbl);
+      for (var i = 0; i < obj.length; i++) {
+        var tr = "<tr>";
+        var td1 = "<td>" + obj[i]["id"] + "</td>";
+        var td2 = "<td>" + obj[i]["name"] + "</td>";
+        var td3 = "<td>" + obj[i]["category"] + "</td>";
+        var td4 = "<td>" + obj[i]["color"] + "</td>";
+        var tr1 = "</tr>";
+
+        $("#mytable").append(tr + td1 + td2 + td3 + td4 + tr1);
+      }
+    </script>
+  </body>
+</html>
