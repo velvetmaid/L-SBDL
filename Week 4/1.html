@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>JSON array object</h1>
+    <table id="table">
+      <tr>
+        <th>Tahun</th>
+        <th>Wilayah</th>
+        <th>Tenaga Kerja</th>
+        <th>Jumlah</th>
+      </tr>
+    </table>
+
+    <style>
+      table {
+        margin: 0 auto;
+        font-size: large;
+        border: 1px solid black;
+      }
+
+      h1 {
+        text-align: center;
+        color: #006600;
+        font-size: xx-large;
+        font-family: "Gill Sans", "Gill Sans MT", " Calibri", "Trebuchet MS",
+          "sans-serif";
+      }
+
+      td {
+        background-color: #e4f5d4;
+        border: 1px solid black;
+      }
+
+      th,
+      td {
+        font-weight: bold;
+        border: 1px solid black;
+        padding: 10px;
+        text-align: center;
+      }
+
+      td {
+        font-weight: lighter;
+      }
+    </style>
+
+    <script>
+      var tenKes = [
+        {
+          tahun: 2020,
+          wilayah: "Kepulauan Seribu",
+          tenaga_kesehatan: "Dokter",
+          jumlah: 43,
+        },
+        {
+          tahun: 2020,
+          wilayah: "Kepulauan Seribu",
+          tenaga_kesehatan: "Perawat",
+          jumlah: 89,
+        },
+        {
+          tahun: 2020,
+          wilayah: "Kepulauan Seribu",
+          tenaga_kesehatan: "Bidan",
+          jumlah: 57,
+        },
+        {
+          tahun: 2020,
+          wilayah: "Kepulauan Seribu",
+          tenaga_kesehatan: "Farmasi",
+          jumlah: 15,
+        },
+        {
+          tahun: 2020,
+          wilayah: "Kepulauan Seribu",
+          tenaga_kesehatan: "Ahli Gizi",
+          jumlah: 9,
+        },
+        {
+          tahun: 2020,
+          wilayah: "Jakarta Selatan",
+          tenaga_kesehatan: "Dokter",
+          jumlah: 2338,
+        },
+        {
+          tahun: 2020,
+          wilayah: "Jakarta Selatan",
+          tenaga_kesehatan: "Perawat",
+          jumlah: 7764,
+        },
+        {
+          tahun: 2020,
+          wilayah: "Jakarta Selatan",
+          tenaga_kesehatan: "Bidan",
+          jumlah: 1659,
+        },
+        {
+          tahun: 2020,
+          wilayah: "Jakarta Selatan",
+          tenaga_kesehatan: "Farmasi",
+          jumlah: 1993,
+        },
+        {
+          tahun: 2020,
+          wilayah: "Jakarta Selatan",
+          tenaga_kesehatan: "Ahli Gizi",
+          jumlah: 296,
+        },
+        {
+          tahun: 2020,
+          wilayah: "Jakarta Timur",
+          tenaga_kesehatan: "Dokter",
+          jumlah: 1861,
+        },
+        {
+          tahun: 2020,
+          wilayah: "Jakarta Timur",
+          tenaga_kesehatan: "Perawat",
+          jumlah: 8030,
+        },
+        {
+          tahun: 2020,
+          wilayah: "Jakarta Timur",
+          tenaga_kesehatan: "Bidan",
+          jumlah: 1840,
+        },
+        {
+          tahun: 2020,
+          wilayah: "Jakarta Timur",
+          tenaga_kesehatan: "Farmasi",
+          jumlah: 1709,
+        },
+        {
+          tahun: 2020,
+          wilayah: "Jakarta Timur",
+          tenaga_kesehatan: "Ahli Gizi",
+          jumlah: 338,
+        },
+        {
+          tahun: 2020,
+          wilayah: "Jakarta Pusat",
+          tenaga_kesehatan: "Dokter",
+          jumlah: 2530,
+        },
+        {
+          tahun: 2020,
+          wilayah: "Jakarta Pusat",
+          tenaga_kesehatan: "Perawat",
+          jumlah: 9824,
+        },
+        {
+          tahun: 2020,
+          wilayah: "Jakarta Pusat",
+          tenaga_kesehatan: "Bidan",
+          jumlah: 1227,
+        },
+        {
+          tahun: 2020,
+          wilayah: "Jakarta Pusat",
+          tenaga_kesehatan: "Farmasi",
+          jumlah: 1772,
+        },
+        {
+          tahun: 2020,
+          wilayah: "Jakarta Pusat",
+          tenaga_kesehatan: "Ahli Gizi",
+          jumlah: 366,
+        },
+        {
+          tahun: 2020,
+          wilayah: "Jakarta Barat",
+          tenaga_kesehatan: "Dokter",
+          jumlah: 1995,
+        },
+        {
+          tahun: 2020,
+          wilayah: "Jakarta Barat",
+          tenaga_kesehatan: "Perawat",
+          jumlah: 6167,
+        },
+        {
+          tahun: 2020,
+          wilayah: "Jakarta Barat",
+          tenaga_kesehatan: "Bidan",
+          jumlah: 1281,
+        },
+        {
+          tahun: 2020,
+          wilayah: "Jakarta Barat",
+          tenaga_kesehatan: "Farmasi",
+          jumlah: 1536,
+        },
+        {
+          tahun: 2020,
+          wilayah: "Jakarta Barat",
+          tenaga_kesehatan: "Ahli Gizi",
+          jumlah: 279,
+        },
+        {
+          tahun: 2020,
+          wilayah: "Jakarta Utara",
+          tenaga_kesehatan: "Dokter",
+          jumlah: 1345,
+        },
+        {
+          tahun: 2020,
+          wilayah: "Jakarta Utara",
+          tenaga_kesehatan: "Perawat",
+          jumlah: 4341,
+        },
+        {
+          tahun: 2020,
+          wilayah: "Jakarta Utara",
+          tenaga_kesehatan: "Bidan",
+          jumlah: 1063,
+        },
+        {
+          tahun: 2020,
+          wilayah: "Jakarta Utara",
+          tenaga_kesehatan: "Farmasi",
+          jumlah: 1102,
+        },
+        {
+          tahun: 2020,
+          wilayah: "Jakarta Utara",
+          tenaga_kesehatan: "Ahli Gizi",
+          jumlah: 229,
+        },
+      ];
+
+      for (var i = 0; i < tenKes.length; i++) {
+        //Fungsi untuk styling menggunakan -> css(namavariabel, {insert style here})
+        function css(e, styles) {
+          for (const property in styles) e.style[property] = styles[property];
+        }
+
+        let tabelBuku = document.querySelector("#tabel");
+        css(tabelBuku, {
+          background: "yellow",
+          border: "solid 1px red",
+        });
+        var barisData = document.createElement("tr");
+        var isiData = document.createElement("td");
+        isiData.innerText = (tenKes.tahun);
+        tabelBuku.setAttribute("align", "center"); //Bikin tabel ketengah
+        isiData.style.border = "solid 1px #057091"; //Border untuk baris data atau tr
+        barisData.appendChild(isiData);
+        isiData = document.createElement("td");
+        isiData.innerText = 250000;
+        isiData.style.border = "solid 1px #057091";
+        barisData.appendChild(isiData);
+        tabelBuku.appendChild(barisData);
+      }
+    </script>
+  </body>
+</html>

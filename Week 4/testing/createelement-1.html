@@ -1,0 +1,24 @@
+<!-- (A) DIV CONTAINER -->
+<table id="demoA">
+    <tr>
+        <th>color</th>
+      </tr>
+</table>
+
+<!-- (B) JAVASCRIPT -->
+<script>
+  // (B1) JSON STRING TO ARRAY
+  var data = '["Red","Green","Blue"]';
+  data = JSON.parse(data);
+
+  // (B2) CREATE LIST
+  var list = document.createElement("th");
+  for (let i of data) {
+    let item = document.createElement("th");
+    item.innerHTML = i;
+    list.appendChild(item);
+  }
+
+  // (B3) APPEND LIST TO CONTAINER
+  document.getElementById("demoA").appendChild(list);
+</script>

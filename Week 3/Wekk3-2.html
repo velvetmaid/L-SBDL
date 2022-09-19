@@ -14,21 +14,20 @@
       </tr>
     </table>
 
-    <script>
-      //Fungsi untuk styling menggunakan -> css(namavariabel, {insert style here})
-      function css(e, styles) {
-        for (const property in styles) e.style[property] = styles[property];
+    <style>
+      table {
+        margin: auto;
+        background: yellow;
+        border: solid 1px red;
       }
+    </style>
 
-      let tabelBuku = document.querySelector("#tabelData");
-      css(tabelBuku, {
-        background: "yellow",
-        border: "solid 1px red",
-      });
+    <script>
+      var tabelBuku = document.querySelector("#tabelData");
+
       var barisData = document.createElement("tr");
       var isiData = document.createElement("td");
       isiData.innerText = "Sistem basis data lanjutan dengan JSON";
-      tabelBuku.setAttribute("align", "center"); //Bikin tabel ketengah
       isiData.style.border = "solid 1px #057091"; //Border untuk baris data atau tr
       barisData.appendChild(isiData);
       isiData = document.createElement("td");
