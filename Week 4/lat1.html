@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Basis Data Lanjutan #4</title>
+</head>
+<h1 style="font-size: 12px;">JAVASCRIPT: Basic Writing, Function, Arrays, Method for Arrays</h1>
+
+<body>
+    <script>
+        //Dasar penulisan JS
+        document.write("Hello World") // Method tampil di html
+        console.log("Hello World") // Method tampil di console (inspect / CTRL + I)
+        document.write("<br/>")
+
+        //Perulangan array
+        var arrNama = ["Rayputra", "Maylia", "Aprilio", "Nabila"];
+        for (var i = 0; i < arrNama.length; i++) {
+            document.write(arrNama[i] + "<br/>");
+        }
+
+        //Perulangan array
+        var buah = ['mango', 'peach', 'banana'];
+        for (let fruit of buah);
+        document.write(buah);
+        document.write("<br/>")
+
+        //Perulangan panggil key dari array
+        var mhs = { Nama: 'SIF', NIM: '08' }
+        document.write(Object.keys(mhs)); // Method panggil keys (Object.keys(NAMA VARIABLE OBJECT ARRAY))
+        document.write("<br/>")
+
+        // Sortir
+        var arrUsia = [32, 33, 12, 40];
+        document.write(arrUsia.sort());
+        document.write("<br/>")
+        document.write(arrUsia.reverse());
+    </script>
+</body>
+
+</html>
