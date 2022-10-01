@@ -192,7 +192,7 @@ for (var i = 0; i < isiData.length; i++) {
   /* for (i = 0; i < tblRow.length; i++) {
     tblRow[i].filter(isOdd).style.backgroundColor = "#fff";
     tblRow[i].filter(isEven).style.backgroundColor = "#000";
-  } */ // Perulanag strip untuk tabel
+  } */ // Perulanag strip untuk tabel masih error
 
   for (var prop in isiData[i]) {
     // Setiap akhir <tr> baru <td>
@@ -200,8 +200,12 @@ for (var i = 0; i < isiData.length; i++) {
     //Buat kolom atau sel di setiap baris <td>
     var cellText = document.createTextNode(isiData[i][prop]);
     cell.appendChild(cellText);
+    // cell = td didalam nya berisi cellText
     tblRow.appendChild(cell);
+    // cell/<td> dibungkus tblRow/<tr>
   }
   tblBody.appendChild(tblRow);
+  //sama bungkus
 }
 tbl.appendChild(tblBody);
+// bungkus lagi

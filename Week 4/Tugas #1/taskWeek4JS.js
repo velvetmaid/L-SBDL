@@ -37,7 +37,7 @@ for (var i = 0; i < dataJSON.length; i++) {
     for (var prop in dataJSON[i]) {
         var cell = document.createElement("td");
         //Panggil data JSON variabel
-        var cellText = document.createTextNode(dataJSON[i][prop]);
+        var cellText = document.textContent(dataJSON[i][prop]);
         //Didalam <td> isi Data JSON
         cell.appendChild(cellText);
         //Ulangi
