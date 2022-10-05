@@ -40,7 +40,7 @@ function sortTblColumn(tblSwp, column, switching) {
 }
 
 /* Tampil data JSON */
-function dataAdata(dataAdata   ) {
+function dataAdata() {
     var tbl = document.getElementById("myTbl"); // variabel untuk mewakili tabel <table>
     var tblBody = document.createElement("tbody"); // buat element baru, bungkus tabel isi dengan tag <tbody>
     for (var i = 0; i < arrData.length; i++) {
