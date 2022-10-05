@@ -5,12 +5,12 @@ fetch("./test.json")
         return response.json();
     })
     .then(function (data) {
-        arrData = data.Hell;
-        dataHell();
+        arrData = data.dataJson;
+        dataAdata();
     })
 
-function dataHell() {
-    console.log("Data: ", arrData);
+function dataAdata() {
+    console.log("Data: ", arrData); // cek console
 }
 
 function sortTblColumn(tblSwp, column, switching) {
@@ -40,26 +40,28 @@ function sortTblColumn(tblSwp, column, switching) {
 }
 
 /* Tampil data JSON */
-var tbl = document.getElementById("myTbl"); // variabel untuk mewakili tabel <table>
-var tblBody = document.createElement("tbody"); // buat element baru, bungkus tabel isi dengan tag <tbody>
-for (var i = 0; i < isiData.length; i++) {
-    // Perulangan array
-    var tblRow = document.createElement("tr");
-    //selama perulangan tambah baris baru dengan tag <tr>
-    for (var j in isiData[i]) {
-        var td = document.createElement("td");
-        //Buat kolom atau sel di setiap baris dengan <td>
-        var isiDataJSON = document.createTextNode(isiData[i][j]);
-        td.appendChild(isiDataJSON);
-        // cell = td didalam nya berisi isiDataJSON
-        tblRow.appendChild(td);
-        // cell/<td> dibungkus tblRow/<tr>
+function dataAdata(dataAdata   ) {
+    var tbl = document.getElementById("myTbl"); // variabel untuk mewakili tabel <table>
+    var tblBody = document.createElement("tbody"); // buat element baru, bungkus tabel isi dengan tag <tbody>
+    for (var i = 0; i < arrData.length; i++) {
+        // Perulangan array
+        var tblRow = document.createElement("tr");
+        //selama perulangan tambah baris baru dengan tag <tr>
+        for (var j in arrData[i]) {
+            var td = document.createElement("td");
+            //Buat kolom atau sel di setiap baris dengan <td>
+            var isiDataJSON = document.createTextNode(arrData[i][j]);
+            td.appendChild(isiDataJSON);
+            // cell = td didalam nya berisi isiDataJSON
+            tblRow.appendChild(td);
+            // cell/<td> dibungkus tblRow/<tr>
+        }
+        tblBody.appendChild(tblRow);
+        // bungkus 
     }
-    tblBody.appendChild(tblRow);
-    // bungkus 
+    tbl.appendChild(tblBody);
+    // bungkus lagi
 }
-tbl.appendChild(tblBody);
-// bungkus lagi
 
 
 function showTblYears() {
