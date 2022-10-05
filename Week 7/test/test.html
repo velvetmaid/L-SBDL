@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+  <title>Sorting Tables w/ JavaScript</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+</head>
+
+<style>
+  section {
+    display: flex;
+    justify-content: center;
+  }
+
+  #showTbl {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+  }
+</style>
+
+<body>
+  <section>
+    <div>
+      <button id="showTbl">Show Table</button>
+      <button onclick="showTblYears">Show Table Years</button>
+      <button id="showTbl">Show Table</button>
+      <button id="showTbl">Show Table</button>
+    </div>
+    <table id="myTbl" class="table-sortable">
+      <thead>
+        <tr>
+          <th><button>Tahun</button></th>
+          <th><button>Hasil</button></th>
+          <th><button>Jenis</button></th>
+        </tr>
+      </thead>
+    </table>
+  </section>
+
+  <script src="index.js"></script>
+</body>

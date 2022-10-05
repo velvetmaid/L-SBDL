@@ -1,0 +1,94 @@
+{
+  "dataJson": [
+    {
+      "tahun": "2000",
+      "jenis": "padi",
+      "hasil": 20
+    },
+    {
+      "tahun": "2001",
+      "jenis": "padi",
+      "hasil": 40
+    },
+    {
+      "tahun": "2002",
+      "jenis": "padi",
+      "hasil": 60
+    },
+    {
+      "tahun": "2003",
+      "jenis": "padi",
+      "hasil": 50
+    },
+    {
+      "tahun": "2004",
+      "jenis": "padi",
+      "hasil": 30
+    },
+    {
+      "tahun": "2005",
+      "jenis": "padi",
+      "hasil": 40
+    },
+    {
+      "tahun": "2006",
+      "jenis": "padi",
+      "hasil": 40
+    },
+    {
+      "tahun": "2007",
+      "jenis": "padi",
+      "hasil": 50
+    },
+    {
+      "tahun": "2000",
+      "jenis": "jagung",
+      "hasil": 30
+    },
+    {
+      "tahun": "2001",
+      "jenis": "jagung",
+      "hasil": 40
+    },
+    {
+      "tahun": "2002",
+      "jenis": "jagung",
+      "hasil": 40
+    },
+    {
+      "tahun": "2003",
+      "jenis": "Jagung",
+      "hasil": 50.1
+    },
+    {
+      "tahun": "2004",
+      "jenis": "jaagung",
+      "hasil": 20
+    },
+    {
+      "tahun": "2005",
+      "jenis": "jagung",
+      "hasil": 40
+    },
+    {
+      "tahun": "2006",
+      "jenis": "jcgung",
+      "hasil": 60
+    },
+    {
+      "tahun": "2007",
+      "jenis": "jbgung",
+      "hasil": "50"
+    },
+    {
+      "tahun": "2022",
+      "jenis": "kiwi 1",
+      "hasil": 100
+    },
+    {
+      "tahun": "20000",
+      "jenis": "kiwi 2",
+      "hasil": 1000
+    }
+  ]
+}
