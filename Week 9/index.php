@@ -65,7 +65,6 @@
 
     .column {
       float: left;
-      width: 50%;
     }
 
     .btn-input {
