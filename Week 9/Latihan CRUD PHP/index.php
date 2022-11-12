@@ -135,45 +135,31 @@
     </div>
   </div>
 
-  <!-- Tampilan Modal tanpa Bootstrap -->
+  <!-- Tampilan Modal tanpa Bootstrap soon... -->
+  <!-- Kalau mau dipisah buat file baru copy baris dibawah dan sesuaikan href button update pada baris diatas eg. -->
   <?php $records = "SELECT * FROM mhs"; ?>
   <?php if ($result = mysqli_query($koneksi, $records)) {
     if (mysqli_num_rows($result)) {
       while ($row = mysqli_fetch_array($result)) {
   ?>
         <div class="modal" id="myModal<?php echo $row['id']; ?>" role="dialog">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <header><span class="close">&times;</span></header>
-              <div class="modal-body">
+          <header><span class="close">&times;</span></header>
+          <form role="form" action="update.php" method="GET">
+            <!-- Sembunyikan $id mhs -->
+            <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+            <label>Nama</label>
+            <input type="text" name="nama" class="form-control" value="<?php echo $row['nama']; ?>">
 
-                <form role="form" action="update.php" method="GET">
-                  <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-                  <div class="form-group">
-                    <label>Nama</label>
-                    <input type="text" name="nama" class="form-control" value="<?php echo $row['nama']; ?>">
-                  </div>
+            <label>NIM</label>
+            <input type="text" name="nim" class="form-control" value="<?php echo $row['nim']; ?>">
 
-                  <div class="form-group">
-                    <label>NIM</label>
-                    <input type="text" name="nim" class="form-control" value="<?php echo $row['nim']; ?>">
-                  </div>
-
-                  <div class="form-group">
-                    <label>Prodi</label>
-                    <input type="text" name="prodi" class="form-control" value="<?php echo $row['prodi']; ?>">
-                  </div>
-                  <div class="modal-footer">
-                    <button type="submit" class="btn btn-success">Update</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  </div>
-
-                </form>
-
-              </div>
+            <label>Prodi</label>
+            <input type="text" name="prodi" class="form-control" value="<?php echo $row['prodi']; ?>">
+            <div class="modal-footer">
+              <button type="submit">Update</button>
+              <button class="close" type="button">Batal</button>
             </div>
-
-          </div>
+          </form>
         </div>
   <?php
       }
