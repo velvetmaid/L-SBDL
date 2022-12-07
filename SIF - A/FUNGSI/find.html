@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+    <head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="Provinsi.js"></script>
+             <script type="text/javascript" >
+                function load() {
+                    var mydata = JSON.parse(data);
+                     
+					var tbody = document.getElementById('Tbldata');
+ 				 
+					document.writeln("<p align='center'><input type='text' id='find-cari' class='find' placeholder=' Kode / Nama Provinsi'></p>" +
+    "<table border='1' align='center'>" +
+		"<thead>" +
+            "<th>KODE PROVINSI</th>" +
+            "<th>NAMA PROVINSI</th>" +
+        "</thead>");
+					for(i=0;i<mydata.length;i++){
+						document.writeln("<tr><td class='kode' data-kode='"+ mydata[i].Kode_Provinsi +"'>"+ mydata[i].Kode_Provinsi +"</td><td class='nama' data-nama='"+ mydata[i].Nama_Provinsi +"'>"+ mydata[i].Nama_Provinsi +"</tr>");
+					}
+					document.writeln("</table>");
+					
+					$('.find').change(function(){
+
+							$('table tbody tr').hide();
+							var cariFlag = 0;
+							var cariValue = $('#find-cari').val();
+							
+							$('table tr').each(function() {  
+
+							if(cariValue == 0){
+								cariFlag = 1;
+							}
+							else if(cariValue == $(this).find('td.kode').data('kode') || cariValue == $(this).find('td.nama').data('nama')){ 
+								cariFlag = 1;
+							}
+							else{
+								cariFlag = 0;
+							}
+							
+							if(cariFlag){
+								$(this).show();
+							}
+
+							});
+						});
+						
+						$('table tbody tr').show();
+
+				}
+        </script>
+		<script>
+			
+		</script>
+    </head>
+    <body onload="load()" align="center">
+    </body>
+</html>

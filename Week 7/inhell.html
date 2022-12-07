@@ -1,27 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        var arrHell = [];
+      var arrHell = [];
 
-        fetch("./ohwell.json")
+      fetch("./ohwell.json")
         .then(function (response) {
-            return response.json();
+          return response.json();
         })
-        .then(function (data){
-            arrHell = data.Hell;
-            dataHell();
-        })
+        .then(function (data) {
+          arrHell = data.Hell;
+          dataHell();
+        });
 
-        function dataHell(){
-            console.log ("Data: ", arrHell);
-        }
+      function dataHell() {
+        console.log("Data asli: ", arrHell);
+
+        var otpH = arrHell.filter((element) => {
+          if (element.name, element.nim in arrHell) {
+            return false;
+          } else {
+            arrHell[element.name, element.nim] = true;
+            return true;
+          }
+          /* return arrHell.indexOf(e) === index; */
+        });
+        console.log("Hasil filter non duplikat:", otpH);
+      }
+
+      let chars = ["A", "B", "A", "C", "B", "C", "Z"];
+      console.log(chars);
+
+      let uniqueChars = chars.filter((element, index) => {
+        return chars.indexOf(element) === index;
+      });
+      console.log(uniqueChars);
     </script>
-</body>
+  </body>
 </html>

@@ -142,10 +142,10 @@ document.querySelectorAll(".table-sortable th").forEach(headerCell => {
 
 /* Fungsi button tampil semua table */
 document.getElementById("showTbl").addEventListener("click", function () {
-    if (document.querySelector("tbody").style.display === "none")
-        document.querySelector("tbody").style.display = "revert";
+    if (document.querySelector("#myTbl").style.display === "revert")
+        document.querySelector("#myTbl").style.display = "none";
     else
-        document.querySelector("tbody").style.display = "none";
+        document.querySelector("#myTbl").style.display = "revert";
 });
 
 /* Koreksi bila ada salah */

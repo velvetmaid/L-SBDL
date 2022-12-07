@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      #wrapper {
+        background-color: aqua;
+      }
+      .asd {
+        background-color: bisque;
+      }
+      table, tr, th {
+        border: 1px solid black;
+      }
+    </style>
+
+    <div id="wrapper">
+      <table id="myTbl"></table>
+    </div>
+
+    <script src="index.js"></script>
+
+    <script>
+      var mhsSIF = [
+        {
+          nama: "udin",
+          nim: "20001234",
+        },
+        {
+          nama: "udisn",
+          nim: "200101234",
+        },
+        {
+          nama: "uds2in",
+          nim: "2000d1234",
+        },
+      ];
+
+      console.log(mhsSIF);
+
+      var bungkus = document.getElementById("wrapper");
+      var judulTbl = document.createElement("h1");
+      judulTbl.innerText = "Ini judul";
+      bungkus.appendChild(judulTbl);
+      /* Done */
+
+      var tblBks = document.getElementById("myTbl");
+      var tblMain = document.createElement("tbody");
+      var tKepala = document.createElement("tr");
+
+      tKepala.innerHTML = "<th>Nama</th><th>Nim</th>";
+
+      tblMain.appendChild(tKepala);
+      tblBks.appendChild(tblMain);
+
+      for (var i = 0; i < mhsSIF.length; i++) {
+        var tblRow = document.createElement("tr");
+        for (var prop in mhsSIF[i]) {
+          var cell = document.createElement("td");
+          var cellText = document.createTextNode(mhsSIF[i][prop]);
+          cell.appendChild(cellText);
+          tblRow.appendChild(cell);
+        }
+      }
+
+      var deskripsi = document.createElement("div");
+      deskripsi.innerHTML = "<p> Bawah </p>";
+      bungkus.appendChild(deskripsi);
+    </script>
+  </body>
+</html>

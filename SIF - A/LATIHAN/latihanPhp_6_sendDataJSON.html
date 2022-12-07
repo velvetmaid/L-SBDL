@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Send data JSON ke php</title>
+    <script>
+        var indeks = 0;
+        var dataPanen = [{"tahun":"2000","jenis":"padi","hasil":"20"}, {"tahun":"2001","jenis":"padi","hasil":"40"}, {"tahun":"2002","jenis":"padi","hasil":"60"}, {"tahun":"2003","jenis":"padi","hasil":"50"}, {"tahun":"2004","jenis":"padi","hasil":"30"}, {"tahun":"2005","jenis":"padi","hasil":"40"}, {"tahun":"2006","jenis":"padi","hasil":"40"}, {"tahun":"2007","jenis":"padi","hasil":"50"}, {"tahun":"2000","jenis":"jagung","hasil":"30"}, {"tahun":"2001","jenis":"jagung","hasil":"40"}, {"tahun":"2002","jenis":"jagung","hasil":"40"}, {"tahun":"2003","jenis":"jagung","hasil":"50"}, {"tahun":"2004","jenis":"jagung","hasil":"20"}, {"tahun":"2005","jenis":"jagung","hasil":"40"}, {"tahun":"2006","jenis":"jagung","hasil":"60"}, {"tahun":"2007","jenis":"jagung","hasil":"50"}];
+
+        function kirimData() {
+            window.location = "latihanPhp_6_receiveDataJSON.php?panen=" + JSON.stringify(dataPanen);
+        } 
+    </script>
+</head>
+<body>
+    <h1>DATA PANEN</h1>
+	<div id="tampilData"></div>	
+	<button onclick="kirimData();">Send Data</button>
+
+	<script type="text/javascript">
+		document.getElementById("tampilData").innerHTML = JSON.stringify(dataPanen).toString();
+	</script>
+</body>
+</html>

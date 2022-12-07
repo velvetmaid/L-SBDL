@@ -1,0 +1,19 @@
+1. Make form input HTML
+2. Submit and convert it into JSON
+3. Show in table
+4. While batch do not insert to database
+5. If you done, then submit all batch to database
+6. After submit all, refresh page and show it on table
+
+Reference :
+- https://stackoverflow.com/questions/32887990/multiple-input-fields-to-json
+- https://stackoverflow.com/questions/41814247/retrieve-multiple-value-from-html-input-and-store-in-json-key-valuearray
+- https://stackoverflow.com/questions/41431322/how-to-convert-formdata-html5-object-to-json
+- https://jsfiddle.net/wilt/jwkzdhsx
+- https://www.w3schools.com/howto/howto_js_todolist.asp
+- https://www.w3schools.com/js/js_input_examples.asp
+- https://howtocreateapps.com/fetch-and-display-json-html-javascript/
+- https://dev.to/amjadmh73/submit-html-forms-to-json-apis-easily-137l
+- https://www.w3.org/TR/html-json-forms/
+- https://www.freecodecamp.org/news/javascript-array-of-objects-tutorial-how-to-create-update-and-loop-through-objects-using-js-array-methods/
+- 	

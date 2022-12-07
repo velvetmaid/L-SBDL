@@ -1,0 +1,69 @@
+<!DOCTYPE php?parData>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas #2 - SBDL</title>
+  </head>
+  <body>
+    <!-- Tarsisius Adhi Julian Sigalingging - 2019081030 -->
+    <style>
+      #tbl,
+      .wrapper,
+      button {
+        margin: auto;
+        text-align: center;
+        margin-top: 1rem;
+      }
+      th,
+      td {
+        border: 1px solid black;
+      }
+    </style>
+
+    <div class="wrapper">
+      <table id="tbl">
+        <tr>
+          <th>NIM</th>
+          <th>Nama</th>
+          <th>Kode Prodi</th>
+        </tr>
+      </table>
+      <button id="btnSimpan">Simpan</button>
+    </div>
+
+    <script type="text/javascript">
+      let objDataMhs = [
+        { nim: "2020087013", nama: "RIVALSYACH ADINANTO", kdProdi: "SIF" },
+        { nim: "2021081001", nama: "RAJASA RUSMANA ", kdProdi: "SIF" },
+        { nim: "2021081002", nama: "YESSY", kdProdi: "SIF" },
+        { nim: "2021081005", nama: "HAFID ROIHAN", kdProdi: "SIF" },
+        { nim: "2021081024", nama: "LOLA ADRIANI PUTRI", kdProdi: "SIF" },
+        { nim: "2021081025", nama: "GLORYS", kdProdi: "SIF" },
+      ];
+
+      for (var i = 0; i < objDataMhs.length; i++) {
+        let tabel = document.getElementById("tbl");
+        let baris = document.createElement("tr");
+        let kolom1 = document.createElement("td");
+        let kolom2 = document.createElement("td");
+        let kolom3 = document.createElement("td");
+
+        kolom1.innerHTML = objDataMhs[i].nim;
+        kolom2.innerHTML = objDataMhs[i].nama;
+        kolom3.innerHTML = objDataMhs[i].kdProdi;
+        baris.appendChild(kolom1);
+        baris.appendChild(kolom2);
+        baris.appendChild(kolom3);
+        tabel.appendChild(baris); 
+      }
+
+      let button = document.querySelector("#btnSimpan");
+      button.addEventListener("click", () => {
+        window.location.href =
+          "receiveDataJSON.php?parData=" + JSON.stringify(objDataMhs);
+      });
+    </script>
+  </body>
+</html>

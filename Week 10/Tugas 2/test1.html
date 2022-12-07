@@ -1,0 +1,41 @@
+<html>
+  <body>
+    <h3>employee form</h3>
+    <div class="row">
+      <div class="col-md-6">
+        <form method="post">
+
+          <label for="id">Id</label>
+          <input type="number" id="id" /></br>
+          <label>Name:</label>
+          <input type="text" id="name"></br>
+          <label for="qty">Qty:</label>
+          <input type="text" id="qty"></br>
+          <label for="price">price:</label>
+          <input type="text" id="price" /></br>
+          <button type="submit" onclick="event.preventDefault(); pushData();">ADD</button>
+        </form>
+      </div>
+      <div class="col-md-6">
+        [<span id="display"></span>]
+      </div>
+      <div id="display1"></div>
+
+    </div>
+
+    <script>
+     function pushData() {
+        const products = [];
+        const data = {
+          id: document.getElementById('id').value,
+          name: document.getElementById('name').value,
+          qty: document.getElementById('qty').value,
+          price: document.getElementById('price').value
+        }
+        const cons = products.push(data);
+        document.getElementById('display').innerText += JSON.stringify(data, null, 2) + ',';
+        console.log(cons);
+      }
+    </script>
+  </body>
+</html>

@@ -6,36 +6,91 @@
 </head>
 
 <style>
+  * {
+    margin: 0;
+  }
   section {
-    display: flex;
-    justify-content: center;
+    max-width: 1400px;
   }
 
   #showTbl {
     display: flex;
     justify-content: center;
-    margin: 1rem;
+    align-items: center;
+    font-size: 16px;
+    margin: 0 1rem;
+    width: 100%;
+    height: 100%;
+  }
+
+  th {
+    background-color: lightcyan;
+  }
+
+  th:hover {
+    background-color: aquamarine;
+  }
+
+  td {
+    background-color: #fcfffb;
+  }
+  td,
+  th {
+    border: 1px solid black;
+    text-align: center;
+  }
+  table {
+    margin: auto;
+    display: none;
+    border-collapse: collapse;
+    overflow-wrap: break-word;
+    width: 85%;
+  }
+
+  header {
+    background-color: #f8ffa0;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 32px;
+  }
+
+  .divAtas {
+    width: 100%;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .divBtn {
+    width: 25%;
+  }
+
+  .divData {
+    width: 50%;
   }
 </style>
 
 <body>
-  <section>
-    <div>
-      <button id="showTbl">Show Table</button>
-      <button onclick="showTblYears">Show Table Years</button>
-      <button id="showTbl">Show Table</button>
-      <button id="showTbl">Show Table</button>
+  <header>JUDUL</header>
+  <div class="divAtas">
+    <div class="divBtn"><button id="showTbl">Show Table</button></div>
+    <div class="divData">
+      <h2>Nama: Muhammad Alim</h2>
+      <h2>NIM: 20001234</h2>
     </div>
+  </div>
+  <section>
     <table id="myTbl" class="table-sortable">
       <thead>
         <tr>
-          <th><button>Tahun</button></th>
-          <th><button>Hasil</button></th>
-          <th><button>Jenis</button></th>
+          <th>Tahun</th>
+          <th>Jenis</th>
+          <th>Hasil</th>
         </tr>
       </thead>
     </table>
   </section>
 
-  <script src="test.js"></script>
+  <script src="index.js"></script>
 </body>

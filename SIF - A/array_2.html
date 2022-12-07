@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<title>Creation of array object in javascript using JSON</title>
+		<script language="javascript" >
+			document.writeln("<h2>JSON array object</h2>");
+			var books = { 
+						"Pascal" : [
+										{ "Name" : "Pascal Made Simple", 	"price" : 700 },
+										{ "Name" : "Guide to Pascal", 		"price" : 400 },
+										{ "Name" : "Algoritma dengan Pascal", "price" : 600}
+									],
+						"Scala" : [
+									{ "Name" : "Scala for the Impatient", 	"price" : 1000 },
+									{ "Name" : "Scala in Depth", 			"price" : 1300 }
+									]
+					}
+
+			var i = 0;
+			document.writeln("BOOK = PASCAL");
+			document.writeln("<table border=1> <tr> <th>Name</th> <th>Price</th></tr>");
+
+			//menampilkan tanpa proses looping dengn FOR
+			document.writeln("<tr><td>"+ books.Pascal[0].Name+"</td><td>"+ books.Pascal[0].price+"</td></tr>");
+			document.writeln("<tr><td>"+ books.Pascal[1].Name+"</td><td>"+ books.Pascal[1].price+"</td></tr>");
+			document.writeln("<tr><td>"+ books.Pascal[2].Name+"</td><td>"+ books.Pascal[2].price+"</td></tr>");
+			document.writeln("</table>");
+
+			document.writeln("<br><hr>");
+
+			//menampilkan dengan proses looping dengan FOR
+			document.writeln("<table border=1> <tr> <th>Name</th> <th>Price</th></tr>");
+			for(i=0;i<books.Pascal.length;i++){
+				document.writeln("<tr><td>"+ books.Pascal[i].Name+"</td><td>"+ books.Pascal[i].price+"</td></tr>");
+			}
+			document.writeln("</table>");
+
+			document.writeln("<br><hr>");
+			
+			var i = 0;
+			document.writeln("BOOK = SCALA");
+			document.writeln("<table border=1> <tr> <th>Name</th> <th>Price</th></tr>");
+			for(i=0;i<books.Scala.length;i++){
+				document.writeln("<tr><td>"+ books.Scala[i].Name+"</td><td>"+ books.Scala[i].price+"</td></tr>");
+			}
+			document.writeln("</table>");
+			
+			document.writeln("<br><hr>");
+			
+			var i = 0;
+			document.writeln("<table border='2'><tr>");
+			for(i=0;i<books.Pascal.length;i++){
+				  document.writeln("<td>");
+				  document.writeln("<table border='1' width=100 >");
+				  document.writeln("<tr><td><b>Name</b></td><td width=50>"
+				 + books.Pascal[i].Name+"</td></tr>");
+				 document.writeln("<tr><td><b>Price</b></td><td width=50>"
+				 + books.Pascal[i].price +"</td></tr>");
+				 document.writeln("</table>");
+				 document.writeln("</td>");
+			}
+			for(i=0;i<books.Scala.length;i++){
+				document.writeln("<td>");
+				document.writeln("<table border='1' width=100 >");
+				document.writeln("<tr><td><b>Name</b></td><td width=50>"
+				
+				+ books.Scala[i].Name+"</td></tr>");
+				document.writeln("<tr><td><b>Price</b></td><td width=50>"
+				+ books.Scala[i].price+"</td></tr>");
+				document.writeln("</table>");
+				document.writeln("</td>");
+			}
+			document.writeln("</tr></table>");
+		</script>
+	</head>
+    
+	<body>
+    
+	</body>
+</html>
+ 	

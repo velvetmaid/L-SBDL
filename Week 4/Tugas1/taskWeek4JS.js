@@ -17,7 +17,7 @@ var description = document.createElement("div");
 description.setAttribute("class", "wrapperDesc"); // Buat nama class
 description.innerHTML = "<p>(Tanggal Buat: 02 Februari 2019) <br/>Data ini berisikan tentang data lokasi tempat penampunan sampah sementara(TPS) di wilayah Provinsi DKI Jakarta tahun 2019 <br/></p>Penjesalasn variabel dalam data sebagai berikut:<br/></p>";
 wrapper.appendChild(description);
-
+ 
 var ol = document.createElement("ol");
 ol.innerHTML = "<li>nama_TPS : nama TPS yang telah ditentukan</li><li>alamat : merupakan alamat dari TPS:</li><li>Kelurahan : merupkan kelurahan dari lokasi TPS: Kecamatan :</li><li>Kecamatan : merupakan kecamatan dari lokasi TIPS;</li><li>Wilayah : merupakan wilayah dari lokasi TPS;</li><li>jenis_TPS : merupakan jenis-jenis TPS;</li><li>luas_lahan(m2) : adalah luas lahan TPS dalam meter persegi;</li><li>status_lahan : adalah status lahan pada TPS.</li><li>volume rata - rata perhari (m3)</li>";
 description.appendChild(ol);
@@ -34,10 +34,10 @@ tblBody.appendChild(tr);
 for (var i = 0; i < dataJSON.length; i++) {
     //Selama perulangan tambah baris baru dan bungkus dengan tag <tr>
     var tblRow = document.createElement("tr");
-    for (var prop in dataJSON[i]) {
+    for (var j in dataJSON[i]) {
         var cell = document.createElement("td");
         //Panggil data JSON variabel
-        var cellText = document.textContent(dataJSON[i][prop]);
+        var cellText = document.createTextNode(dataJSON[i][j]);
         //Didalam <td> isi Data JSON
         cell.appendChild(cellText);
         //Ulangi

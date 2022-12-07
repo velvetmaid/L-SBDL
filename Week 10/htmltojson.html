@@ -1,0 +1,32 @@
+<html>
+  <head> </head>
+  <body>
+    <label>First Name:</label>
+    <input id="firstname" type="text" />
+    <br />
+    <label>Last Name:</label>
+    <input id="lastname" type="text" />
+    <br />
+    <button id="jsonbtn">Click to convert input to JSON</button>
+    <p id="jsontext"></p>
+
+    <script type="text/javascript">
+      //get references for text input and button fields
+      var firstname = document.getElementById("firstname");
+      var lastname = document.getElementById("lastname");
+      var jsonBtn = document.getElementById("jsonbtn");
+      var jsonText = document.getElementById("jsontext");
+
+      //add click event listener, to get data when data is entered
+      jsonBtn.addEventListener("click", function () {
+        //store data in JavaScript object
+        var data = {
+          firstName: firstname.value,
+          lastName: lastname.value,
+        };
+        //convert JavaScript object to JSON
+        jsonText.innerHTML = JSON.stringify(data);
+      });
+    </script>
+  </body>
+</html>

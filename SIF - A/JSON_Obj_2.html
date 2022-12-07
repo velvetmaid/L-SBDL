@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Creating an Array from JSON</h2>
+<p id="demo"></p>
+<p id="demo1"></p>
+
+<script>
+var myJSON = [{"Merk":"Ford", "Merk":"BMW", "Merk":"Fiat"}];
+
+var myArray = JSON.stringify(myJSON);
+
+document.getElementById("demo").innerHTML = myArray;
+document.getElementById("demo1").innerHTML = myArray;
+
+</script>
+
+</body>
+</html>

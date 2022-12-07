@@ -1,0 +1,16 @@
+const jsonData = {};
+
+for(const [key, value] of formData) {
+    jsonData[key] = value;
+}
+---
+var object = {};
+formData.forEach(function(value, key){
+    object[key] = value;
+});
+var json = JSON.stringify(object);
+---
+var object = {};
+formData.forEach((value, key) => object[key] = value);
+var json = JSON.stringify(object);
+---
