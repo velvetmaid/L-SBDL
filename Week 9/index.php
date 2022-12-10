@@ -65,10 +65,7 @@
 
     .column {
       float: left;
-<<<<<<< HEAD
-=======
       width: 50%;
->>>>>>> 6ff3e9b (lat)
     }
 
     .btn-input {
@@ -76,8 +73,6 @@
     }
   </style>
 
-<<<<<<< HEAD
-=======
   <?php include 'dataJSON.php' ?>
 
   <script type="text/javascript">
@@ -92,19 +87,18 @@
     });
   </script>
 
->>>>>>> 6ff3e9b (lat)
   <div class="wrapper">
     <div class="column">
       <form action="input.php" method="post">
-        <div>
-<<<<<<< HEAD
+        <!-- <div>
           <label for="Nama">Nama:</label>
           <input type="text" name="nama" id="Nama" required />
         </div>
         <div>
           <label for="NIM">NIM:</label>
           <input type="number" name="nim" id="NIM" required />
-=======
+        </div> -->
+        <div>
           <label for="wilayah">Wilayah:</label>
           <input type="text" name="wilayah" required />
         </div>
@@ -127,12 +121,11 @@
         <div>
           <label for="jumlah_kecamatan">Jumlah Kecamatan:</label>
           <input type="number" name="jumlah_kecamatan" required />
->>>>>>> 6ff3e9b (lat)
         </div>
-        <div>
+        <!-- <div>
           <label for="kdProdi">Prodi:</label>
           <input type="text" name="kd_prodi" id="kdProdi" required />
-        </div>
+        </div> -->
         <input class="btn-input" type="submit" value="Input" />
       </form>
     </div>
@@ -140,11 +133,9 @@
     <div class="column">
       <table>
         <tr>
-<<<<<<< HEAD
-          <th>Nama</th>
+          <!-- <th>Nama</th>
           <th>Nim</th>
-          <th>Prodi</th>
-=======
+          <th>Prodi</th> -->
           <th>wilayah</th>
           <th>jumlah_kecamatan</th>
           <th>kemasan_kaleng_/kg</th>
@@ -156,26 +147,21 @@
           <th>limbah_medis/kg</th>
           <th>jumlah_lb3_rt_dan_medis</th>
           <th>oli_bekas(liter)</th>
->>>>>>> 6ff3e9b (lat)
+          >>>>>>> 6ff3e9b (lat)
         </tr>
 
         <?php include 'koneksi.php' ?>
 
-<<<<<<< HEAD
-        <?php $records = "SELECT * FROM mhs"; ?>
-=======
         <?php $records = "SELECT * FROM mytable"; ?>
->>>>>>> 6ff3e9b (lat)
         <?php if ($result = mysqli_query($koneksi, $records)) {
           if (mysqli_num_rows($result)) {
             while ($row = mysqli_fetch_array($result)) {
         ?>
               <tr>
-<<<<<<< HEAD
-                <td> <?php echo $row['nama']; ?> </td>
+                <!-- <td> <?php echo $row['nama']; ?> </td>
                 <td> <?php echo $row['nim']; ?> </td>
-                <td> <?php echo $row['kd_prodi']; ?> </td>
-=======
+                <td> <?php echo $row['kd_prodi']; ?> </td> -->
+
                 <td> (<?php echo $row['wilayah']; ?>) </td>
                 <td> <?php echo $row['jumlah_kecamatan']; ?> </td>
                 <td> <?php echo $row['kemasan_kaleng_/kg']; ?> </td>
@@ -187,7 +173,6 @@
                 <td> <?php echo $row['limbah_medis/kg']; ?> </td>
                 <td> <?php echo $row['jumlah_lb3_rt_dan_medis']; ?> </td>
                 <td> <?php echo $row['oli_bekas(liter)']; ?> </td>
->>>>>>> 6ff3e9b (lat)
               </tr>
         <?php
             }
@@ -198,8 +183,4 @@
   </div>
 </body>
 
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> 6ff3e9b (lat)
