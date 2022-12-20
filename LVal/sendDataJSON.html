@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UAS SBDL | 2019081030</title>
+  </head>
+
+  <body>
+    <div id="myContainer"></div>
+    <button id="myBtnView">Lihat JSON</button>
+    <button id="myBtnSend">Kirim JSON</button>
+    <button id="closeModal">Close</button>
+
+    <script type="text/javascript">
+      let objDataMhs = [
+        {
+          nim: "2020087013",
+          nama: "RIVALSYACH ADINANTO",
+          kdProdi: "SIF",
+        },
+        {
+          nim: "2021081001",
+          nama: "RAJASA RUSMANA ",
+          kdProdi: "SIF",
+        },
+        {
+          nim: "2021081002",
+          nama: "YESSY",
+          kdProdi: "SIF",
+        },
+        {
+          nim: "2021081005",
+          nama: "HAFID ROIHAN",
+          kdProdi: "SIF",
+        },
+        {
+          nim: "2021081024",
+          nama: "LOLA ADRIANI PUTRI",
+          kdProdi: "SIF",
+        },
+        {
+          nim: "2021081025",
+          nama: "GLORYS",
+          kdProdi: "SIF",
+        },
+      ];
+
+      let style = document.createElement("style");
+      style.type = "text/css";
+      style.innerHTML = `body {
+        font-family: courier, monospace;
+        background-color: #0b061e;
+        color: #e7e8eb;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      #myContainer {
+        padding: 3rem;
+      }
+
+      button, span {
+        margin : auto; 
+        background-color: transparent;
+        border: 3px solid #00d7c3;
+        border-radius: 50px;
+        -webkit-transition: all 0.1s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        color: #00d7c3;
+        padding: 1rem;
+        width: 15rem;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 600;
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+      }
+
+      table {
+        border-collapse: collapse;      
+      }
+
+      th, tr, td {
+        border: 3px solid #00d7c3;
+        padding: 1rem;
+      }
+
+      button:hover {
+          box-shadow: 0 0 10px 0 #00d7c3 inset, 0 0 20px 2px #00d7c3;
+          border: 3px solid #00d7c3;
+      }
+      `;
+      document.getElementsByTagName("head")[0].appendChild(style);
+
+      let gContainer = document.getElementById("myContainer");
+      let cDbResult = document.createElement("h1");
+      gContainer.appendChild(cDbResult);
+
+      cDbResult.innerHTML = "Data JSON sudah terkirim, silahkan cek database.";
+      cDbResult.style.display = "none";
+
+      let gBtnView = document.getElementById("myBtnView");
+      let gBtnSend = document.getElementById("myBtnSend");
+      let gSpan = document.getElementById("closeModal");
+
+      let cTbl = document.createElement("table");
+      let cThead = document.createElement("thead");
+      let cTbody = document.createElement("tbody");
+
+      gContainer.style.display = "none";
+      gSpan.style.display = "none";
+
+      gBtnView.onclick = function () {
+        gContainer.style.display = "revert";
+        gSpan.style.display = "revert";
+        gBtnView.style.display = "none";
+      };
+
+      gBtnSend.onclick = function () {
+        gBtnSend.style.display = "none";
+        gContainer.style.display = "revert";
+        cTbl.style.display = "none";
+        gSpan.style.display = "none";
+        cDbResult.style.display = "revert";
+        gBtnView.style.display = "none";
+      };
+
+      gSpan.onclick = function () {
+        gContainer.style.display = "none";
+        gSpan.style.display = "none";
+        gBtnView.style.display = "revert";
+      };
+
+      window.onclick = function (event) {
+        if (event.target == gContainer) {
+          gContainer.style.display = "none";
+          gSpan.style.display = "none";
+        }
+      };
+
+      let cRow = document.createElement("tr");
+      let cTh_1 = document.createElement("th");
+      let cTh_2 = document.createElement("th");
+      let cTh_3 = document.createElement("th");
+
+      cTh_1.innerHTML = "NIM";
+      cTh_2.innerHTML = "Nama";
+      cTh_3.innerHTML = "Kode Prodi";
+
+      cRow.appendChild(cTh_1);
+      cRow.appendChild(cTh_2);
+      cRow.appendChild(cTh_3);
+      cThead.appendChild(cRow);
+
+      cTbl.appendChild(cThead);
+      cTbl.appendChild(cTbody);
+      gContainer.appendChild(cTbl);
+
+      for (let i = 0; i < objDataMhs.length; i++) {
+        let cTr = document.createElement("tr");
+        for (let j in objDataMhs[i]) {
+          let cTd = document.createElement("td");
+          let isiDataJSON = document.createTextNode(objDataMhs[i][j]);
+          cTd.appendChild(isiDataJSON);
+          cTr.appendChild(cTd);
+        }
+        cTbody.appendChild(cTr);
+      }
+
+      let dbParam = JSON.stringify(objDataMhs);
+      gBtnSend.addEventListener("click", () => {
+        window.location.href = "receiveDataJSON.php?&x=" + dbParam;
+      });
+    </script>
+  </body>
+</html>
