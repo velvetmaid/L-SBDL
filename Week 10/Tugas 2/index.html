@@ -5,13 +5,12 @@
   </head>
   <body>
     <div class="wrapper">
-      <header>Tugas 2</header>
+      <header>UAS</header>
       <button id="myBtn">Create Team</button>
-
       <div id="myModal" class="modal">
         <div class="box-content">
           <header><span class="close">&times;</span></header>
-          <form enctype="application/json" autocomplete="off">
+          <form id="myForm" enctype="application/json" autocomplete="off">
             <div class="user-box">
               <input type="text" class="foo" id="characterName" name="characterName" />
               <label>Character Name</label>
@@ -35,7 +34,7 @@
             <button class="btn" type="button" onclick="addData()">Add</button>
             <!-- <input type="button" onclick="addTo()" value="Add" /> -->
           </form>
-          <table id="tbl">
+          <table id="valTblResult" class="valRes">
             <tr>
               <th>Character Name</th>
               <th>Species</th>
@@ -43,8 +42,8 @@
               <th>Ability</th>
             </tr>
           </table>
-          <h3>Result</h3>
-          <div id="result"><div>
+          <button id="valBtnSubmit" class="btn valRes">Submit ALL</button>
+          <div id="kontol">Hasil addJSON Testing<div>
           <p>Some text in the Modal..</p>
           <p>Some text in the Modal..</p>
           <p>Some text in the Modal..</p>
@@ -54,10 +53,14 @@
 
       <h1>123 | ABC abc</h1>
       <h2>Quickly</h2>
+      <h3 class="testNgentod">Lorem Ipsum 1</h3> <br>
+      <h3 class="testNgentod">Lorem Ipsum 2</h3> <br>
+      <h3 class="testNgentod">Lorem Ipsum 3</h3> <br>
+      <h3 class="testNgentod">Lorem Ipsum 4</h3> <br>      
     </div>
 
     <script>
-      // Modal
+      /* Start Modal */
       var modal = document.getElementById("myModal");
       var btn = document.getElementById("myBtn");
       var span = document.getElementsByClassName("close")[0];
@@ -75,11 +78,45 @@
           modal.style.display = "none";
         }
       };
+      /* End Modal */
 
-      const vResult = document.getElementById("result");
-      const arr = [];
+      const vResult = document.getElementById("kontol");
+      const arr = [
+        // {
+        //   characterName: "EQU(atio)N Jerks",
+        //   species: "Greedy (being poor)",
+        //   position: "Borderline",
+        //   ability: "Equation Behaviour & Manipulative (To Survive)"
+        // }, // write object in this array, if you want to add
+      ]; 
 
-      // Button function
+      function displayTblData() {
+        // const li = document.createElement("li");
+        //   li.innerHTML = arr;
+        //   vResult.appendChild(li);
+          console.log(arr);
+            const vTbl = document.getElementById("valTblResult")
+            const vRow = document.createElement("tr");
+            const col1 = document.createElement("td");
+            const col2 = document.createElement("td");
+            const col3 = document.createElement("td");
+            const col4 = document.createElement("td");
+          // var pVal = "";
+            for (var i = 0; i < arr.length; i++) {
+              //  pVal = pVal + arr[i];
+              col1.innerHTML = arr[i].characterName;
+              col2.innerHTML = arr[i].species;
+              col3.innerHTML = arr[i].position;
+              col4.innerHTML = arr[i].ability;
+              vRow.appendChild(col1);
+              vRow.appendChild(col2);
+              vRow.appendChild(col3);
+              vRow.appendChild(col4);
+              vTbl.appendChild(vRow);
+          }
+      }
+      
+      // Button function 1
       function addData() {
         const obj = 
         {
@@ -88,35 +125,52 @@
           position:document.getElementById("position").value,
           ability:document.getElementById("ability").value
         }
-          arr.push(obj);
-          const li = document.createElement("li");
-          li.innerHTML = arr;
-          vResult.appendChild(li);
-          console.log(arr);
-          for (var i = 0; i < arr.length; i++) {
-             const vTbl = document.getElementById("tbl");
-             const vRow = document.createElement("tr");
-             const col1 = document.createElement("td");
-             const col2 = document.createElement("td");
-             const col3 = document.createElement("td");
-             const col4 = document.createElement("td");
-             col1.innerHTML = arr[i].characterName;
-             col2.innerHTML = arr[i].species;
-             col3.innerHTML = arr[i].position;
-             col4.innerHTML = arr[i].ability;
-             vRow.appendChild(col1);
-             vRow.appendChild(col2);
-             vRow.appendChild(col3);
-             vRow.appendChild(col4);
-             vTbl.appendChild(vRow);
-          }
+          arr.push(obj); // PUSH DATA OBJ KE ARRAY (arr)
+
+          var x = document.getElementsByClassName("valRes");
+            for (var i = 0; i < x.length; i++) {
+              x[i].style.display = "revert";
+            } // Show table after click addData
+
+          document.getElementById("myForm").reset(); // Reset FORM
+          displayTblData(); // Funtion baru untuk tampil data
       }
+
+      let veiBtnSubmit = document.querySelector("#valBtnSubmit");
+      veiBtnSubmit.addEventListener("click", () => {
+        window.location.href =
+          "testingTerima.php?parData=" + JSON.stringify(arr);
+      });
+
+
+      // Button Function 2
+/*       function addData() {
+        // const obj = 
+        // {
+          var characterName = document.getElementById("characterName").value;
+          var species = document.getElementById("species").value;
+          var position = document.getElementById("position").value;
+          var ability = document.getElementById("ability").value;
+        // }
+        if(characterName && species && position && ability){
+        arr.push({characterName:characterName, species:species, position:position, ability:ability});
+        displayTblData()
+        }
+      } */
       
+
+
+
+
+
+      /* --------------------------------------------- */
+      /* WHAT THE ACTUAL FUCK (SUCH A WASTE OF TIME), I WROTE THIS SHITTIEST CODE */
+      /* --------------------------------------------- */
       // const fForm = document.querySelector("form");
       // const input = document.querySelectorAll(".foo").value;
-      // const dataList = document.getElementById("result");
+      // const dataList = document.getElementById("kontol");
 
-      // const existData = JSON.parse(localStorage.getItem("result")) || [];
+      // const existData = JSON.parse(localStorage.getItem("kontol")) || [];
 
       // const arrData = [];
 
@@ -130,7 +184,7 @@
       //   const li = document.createElement("li");
       //   li.innerHTML = character_name;
       //   dataList.appendChild(li);
-      //   localStorage.setItem("result", JSON.stringify(arrData));
+      //   localStorage.setItem("kontol", JSON.stringify(arrData));
       //   input.value = "";
       //   console.log(arrData);
       // }
@@ -154,8 +208,8 @@
 
       //   const viewJson = JSON.stringify(value);
       //   console.log({ viewJson });
-      //   document.getElementById("result").innerHTML = viewJson;
-      //   // document.getElementById("result").innerHTML = viewJson;
+      //   document.getElementById("kontol").innerHTML = viewJson;
+      //   // document.getElementById("kontol").innerHTML = viewJson;
       //   // showJSON({ viewJson });
       //   showJSON(viewJson);
       // }
@@ -175,7 +229,7 @@
       //       viewJson[i].ability;
       //     mainContainer.appendChild(div);
       //   }
-      //   document.getElementById("result").innerHTML = viewJson;
+      //   document.getElementById("kontol").innerHTML = viewJson;
       //   // document.getElementById("btnSimpan").style.visibility = "visible";
       // }
 

@@ -24,6 +24,10 @@ button {
     display: inline-block;
 }
 
+#valTblResult, #valBtnSubmit {
+    display: none;
+}
+
 #myBtn,
 .box-content,
 input,

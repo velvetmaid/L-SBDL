@@ -1,0 +1,138 @@
+<html>
+  <head>
+    <title>sbdl</title>
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+      text-decoration: none;
+    }
+
+    body {
+      background-color: #191911;
+      color: #f0f0f0;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      text-align: center;
+      padding: 0.5rem;
+    }
+
+    /* class */
+    .container {
+      margin: 1.5rem 2rem;
+    }
+  </style>
+
+  <body>
+    <div class="container">
+      <center>
+        <h2>Ahmad Fathon - 2019081047 - Sistem Informasi</h2>
+      </center>
+
+      <!-- form tambah client -->
+      <input type="text" name="nim" id="nim" placeholder="NIM . . ." />
+      <input type="text" name="nama" id="nama" placeholder="Nama . . ." />
+      <input
+        type="text"
+        name="prodi"
+        id="prodi"
+        placeholder="Kode Prodi . . ."
+      />
+      <button
+        type="submit"
+        id="submit"
+        onclick="event.preventDefault(); submit();"
+      >
+        Submit
+      </button>
+      <br />
+      <br />
+
+      <!-- tabel client -->
+      <h4>Tabel Data</h4>
+      <table border="1" id="tbl">
+        <thead>
+          <tr>
+            <th>NIM</th>
+            <th>Nama</th>
+            <th>Kode Prodi</th>
+            <th id="act">Action</th>
+          </tr>
+        </thead>
+        <tbody id="tby"></tbody>
+      </table>
+
+      <!-- simpan ke DB -->
+      <br /><br />
+      <button id="simpan">Simpan</button>
+    </div>
+
+    <!-- JavaScript Code -->
+    <script type="text/javascript">
+      var arr = [
+        { nim: "2020087013", nama: "RIVALSYACH ADINANTO", kdProdi: "SIF" },
+        { nim: "2021081001", nama: "RAJASA RUSMANA ", kdProdi: "SIF" },
+        { nim: "2021081002", nama: "YESSY", kdProdi: "SIF" },
+        { nim: "2021081005", nama: "HAFID ROIHAN", kdProdi: "SIF" },
+        { nim: "2021081024", nama: "LOLA ADRIANI PUTRI", kdProdi: "SIF" },
+        { nim: "2021081025", nama: "GLORYS", kdProdi: "SIF" },
+      ];
+      // variable
+
+      // function
+      function tampil() {
+        const tbody = document.getElementById("tby");
+        for (var i = 0; i < arr.length; i++) {
+          var btnEdit =
+            "<button class='btn-edit' href='#' onclick='edit(" +
+            i +
+            ")'>Edit</button>";
+          var btnHapus =
+            "<button class='btn-hapus' href='#' onclick='hapus(" +
+            i +
+            ")'>Hapus</button>";
+          tbody.innerHTML +=
+            "<tr><td>" +
+            arr[i].nim +
+            "</td><td>" +
+            arr[i].nama +
+            "</td><td>" +
+            arr[i].kdProdi +
+            "</td><td>" +
+            btnEdit +
+            " " +
+            btnHapus +
+            "</td></tr>";
+        }
+      }
+
+      // const submit = () =>{
+
+      // }
+
+      function submit() {
+        const data = {
+          nim: document.getElementById("nim").value,
+          nama: document.getElementById("nama").value,
+          kdProdi: document.getElementById("prodi").value,
+        };
+        arr.push(data);
+        var inputs = document.getElementsByTagName("input");
+        for (var i = 0; i < inputs.length; i++) {
+          inputs[i].value = "";
+        }
+        console.log(arr);
+        tampil();
+      }
+      tampil();
+      function edit() {}
+      function hapus() {}
+    </script>
+  </body>
+</html>
